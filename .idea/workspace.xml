@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16f17e14-cf14-4d7d-bef3-98a431ba7ada" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/movies/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/django_movie/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/django_movie/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/django_movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/django_movie/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/movies/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django_dart_blog" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -71,6 +75,49 @@
       <option name="presentableId" value="Default" />
       <updated>1613487506999</updated>
     </task>
+    <task id="LOCAL-00001" summary="Созданы модели">
+      <created>1613492745887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613492745887</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Созданы модели" />
+    <option name="LAST_COMMIT_MESSAGE" value="Созданы модели" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/django_movie/movies/admin.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,9 @@
+import os
 from datetime import date
+from uuid import uuid4
 
 from django.db import models
+from unidecode import unidecode
 
 
 class Category(models.Model):
@@ -22,7 +25,16 @@ class Actor(models.Model):
     name = models.CharField("Имя", max_length=100)
     age = models.PositiveSmallIntegerField("Возраст", default=0)
     description = models.TextField("Описание")
-    image = models.ImageField("Изображение", upload_to="actors/")
+
+    def file_rename(self, filename):
+        ext = filename.split('.')[-1]
+        if self.name:
+            filename = f'{unidecode(str(self.name))}.{ext}'
+        else:
+            filename = f'{uuid4().hex}.{ext}'
+        return os.path.join('actors', filename)
+
+    image = models.ImageField("Изображение", upload_to=file_rename)
 
     def __str__(self):
         return self.name
@@ -49,15 +61,24 @@ class Genre(models.Model):
 class Movie(models.Model):
     """Фильм"""
     title = models.CharField("Название", max_length=100)
-    tagline = models.CharField("Слоган", max_length=100, default='')
+    tagline = models.CharField("Слоган", max_length=100, default='', blank=True)
     description = models.TextField("Описание")
-    poster = models.ImageField("Постер", upload_to="movies/")
+
+    def file_rename(self, filename):
+        ext = filename.split('.')[-1]
+        if self.title:
+            filename = f'{unidecode(str(self.title))}.{ext}'
+        else:
+            filename = f'{uuid4().hex}.{ext}'
+        return os.path.join('movies', filename)
+
+    poster = models.ImageField("Постер", upload_to=file_rename)
     year = models.PositiveSmallIntegerField("Дата выхода", default=2019)
     country = models.CharField("Страна", max_length=30)
     directors = models.ManyToManyField(Actor, verbose_name="режиссер", related_name="film_director")
     actors = models.ManyToManyField(Actor, verbose_name="актеры", related_name="film_actor")
     genres = models.ManyToManyField(Genre, verbose_name="жанры")
-    world_premiere = models.DateField("Примьера в мире", default=date.today)
+    world_premiere = models.DateField("Премьера в мире", default=date.today)
     budget = models.PositiveIntegerField("Бюджет", default=0,
                                          help_text="указывать сумму в долларах")
     fees_in_usa = models.PositiveIntegerField(
