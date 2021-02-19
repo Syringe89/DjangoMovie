@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16f17e14-cf14-4d7d-bef3-98a431ba7ada" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/django_movie/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/django_movie/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/django_movie/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/django_movie/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/movies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -32,11 +37,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django_dart_blog" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syrin\PycharmProjects\DjangoMovie\django_movie\movies\templates" />
+      <recent name="C:\Users\syrin\PycharmProjects\DjangoMovie\django_movie\django_movie\static" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -82,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613492745887</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Модель, админка, настройка Media">
+      <created>1613577178518</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613577178518</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -105,10 +124,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Созданы модели" />
-    <option name="LAST_COMMIT_MESSAGE" value="Созданы модели" />
+    <MESSAGE value="Модель, админка, настройка Media" />
+    <option name="LAST_COMMIT_MESSAGE" value="Модель, админка, настройка Media" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

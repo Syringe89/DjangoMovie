@@ -3,6 +3,7 @@ from datetime import date
 from uuid import uuid4
 
 from django.db import models
+from django.urls import reverse
 from unidecode import unidecode
 
 
@@ -92,6 +93,9 @@ class Movie(models.Model):
     )
     url = models.SlugField(max_length=130, unique=True)
     draft = models.BooleanField("Черновик", default=False)
+
+    def get_absolute_url(self):
+        return reverse('movie_detail', kwargs={'url': self.url})
 
     def __str__(self):
         return self.title

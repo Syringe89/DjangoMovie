@@ -3,17 +3,17 @@ from .models import *
 
 
 @admin.register(Category)
-class AdminCategory(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('name',)}
 
 
 @admin.register(Genre)
-class AdminGenre(admin.ModelAdmin):
+class GenreAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('name',)}
 
 
 @admin.register(Movie)
-class AdminMovie(admin.ModelAdmin):
+class MovieAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('title',)}
 
 
