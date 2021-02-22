@@ -95,7 +95,7 @@ class Movie(models.Model):
     draft = models.BooleanField("Черновик", default=False)
 
     def get_absolute_url(self):
-        return reverse('movie_detail', kwargs={'url': self.url})
+        return reverse('movie_detail', kwargs={'slug': self.url})
 
     def __str__(self):
         return self.title
@@ -108,8 +108,8 @@ class Movie(models.Model):
 class MovieShots(models.Model):
     """Кадры из фильма"""
     title = models.CharField("Заголовок", max_length=100)
-    description = models.TextField("Описание")
-    image = models.ImageField("Изображение", upload_to="movie_shots/")
+    description = models.TextField("Описание", blank=True)
+    image = models.ImageField("Изображение", upload_to="movie_shots/%Y/%m/%d")
     movie = models.ForeignKey(Movie, verbose_name="Фильм", on_delete=models.CASCADE)
 
     def __str__(self):
