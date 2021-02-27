@@ -104,8 +104,6 @@
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 @media (min-width: 768px) {
   .container {
@@ -5849,7 +5847,6 @@ ul {
 }
 .page-single {
   background-color: #020d18;
-  padding: 75px 0;
 }
 .social-btn {
   margin-bottom: 40px;
@@ -6135,6 +6132,33 @@ ul {
   align-items: inherit;
 }
 .movie-single .movie-single-ct .tab.review .mv-user-review-item .user-infor img {
+  margin-right: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 42px;
+  height: 42px;
+}
+
+.movie-single .movie-single-ct .tab.review .mv-user-review-ans-item {
+  border-bottom: 1px solid #233a50;
+  padding: 20px 20px 20px 40px;
+}
+@media (max-width: 767px) {
+  .movie-single .movie-single-ct .tab.review .mv-user-review-ans-item {
+    padding: 20px;
+  }
+}
+.movie-single .movie-single-ct .tab.review .mv-user-review-ans-item .user-infor {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: inherit;
+}
+.movie-single .movie-single-ct .tab.review .mv-user-review-ans-item .user-infor img {
   margin-right: 30px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

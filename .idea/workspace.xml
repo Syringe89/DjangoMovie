@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16f17e14-cf14-4d7d-bef3-98a431ba7ada" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/movies/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/movies/templatetags/movie_filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/movies/templatetags/movie_tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_latestnew.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_login-content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_movie-items.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_preloader.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_signup-content.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_movie/templates/inc/_trailers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_movie/movies/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_add_review.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/django_movie/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/django_movie/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/movies/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_movie/movies/templates/movies/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_movie/movies/templates/movies/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/templates/movies/movie_index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_movie/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_movie/movies/views.py" afterDir="false" />
     </list>
@@ -119,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613750998784</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Шаблонизация, кастомные теги">
+      <created>1614007077215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614007077215</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -148,7 +145,8 @@
     <MESSAGE value="Созданы модели" />
     <MESSAGE value="Модель, админка, настройка Media" />
     <MESSAGE value="Debug toolbar, movie_detail.html, MovieDetailView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debug toolbar, movie_detail.html, MovieDetailView" />
+    <MESSAGE value="Шаблонизация, кастомные теги" />
+    <option name="LAST_COMMIT_MESSAGE" value="Шаблонизация, кастомные теги" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
