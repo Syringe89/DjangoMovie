@@ -23,6 +23,7 @@ from movies.views import MovieView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('movies.urls')),
 ]
 
