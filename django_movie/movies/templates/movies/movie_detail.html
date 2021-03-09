@@ -107,13 +107,6 @@
 
                                                 {% endfor %}
 
-                                                <div class="vd-it">
-                                                    <img class="vd-img" src="{% static 'images/uploads/image4.jpg' %}"
-                                                         alt="">
-                                                    <a class="fancybox-media hvr-grow"
-                                                       href="https://www.youtube.com/embed/o-0hcF97wy0"><img
-                                                            src="{% static 'images/uploads/play-vd.png' %}" alt=""></a>
-                                                </div>
                                             </div>
                                             <div class="title-hd-sm">
                                                 <h4>В главных ролях</h4>
@@ -356,35 +349,26 @@
                                     <div class="row">
                                         <div class="rv-hd">
                                             <div>
-                                                <h3>Videos & Photos of</h3>
-                                                <h2>Skyfall: Quantum of Spectre</h2>
+                                                <h3>Видео и фото материалы</h3>
+                                                <h2>{{ movie.title }}</h2>
                                             </div>
                                         </div>
                                         <div class="title-hd-sm">
-                                            <h4>Videos <span>(8)</span></h4>
+                                            <h4>Фото <span> ({{ movie.movieshots_set.count }})</span></h4>
                                         </div>
-                                        <div class="mvsingle-item media-item">
-                                            <div class="vd-item">
-                                                <div class="vd-it">
-                                                    <img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
-                                                    <a class="fancybox-media hvr-grow"
-                                                       href="https://www.youtube.com/embed/o-0hcF97wy0"><img
-                                                            src="images/uploads/play-vd.png" alt=""></a>
-                                                </div>
-                                                <div class="vd-infor">
-                                                    <h6><a href="#">Trailer: Watch New Scenes</a></h6>
-                                                    <p class="time"> 1: 31</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="title-hd-sm">
-                                            <h4>Photos <span> (21)</span></h4>
-                                        </div>
+
                                         <div class="mvsingle-item">
+
+                                        {% for image in movie.movieshots_set.all|slice:":6" %}
+
                                             <a class="img-lightbox" data-fancybox-group="gallery"
-                                               href="images/uploads/image11.jpg"><img src="images/uploads/image1.jpg"
+                                               href="{{ image.image.url }}"><img src="{{ image.image.url }}" width="200"
                                                                                       alt=""></a>
+
+                                        {% endfor %}
+
                                         </div>
+
                                     </div>
                                 </div>
                                 <div id="moviesrelated" class="tab">

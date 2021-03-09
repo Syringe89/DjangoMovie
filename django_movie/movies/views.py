@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
 
 from movies.forms import MovieAddReviewForm
 from movies.models import Movie, Rating
+from .utils import MovieFilterMixin
 
 
 class MovieView(ListView):
@@ -20,12 +21,14 @@ class MovieDetailView(DetailView):
     template_name = 'movies/movie_detail.html'
     # template_name = 'movies/test.html'
     context_object_name = 'movie'
-    queryset = Movie.objects.prefetch_related('actors', 'directors')
 
     def get_context_data(self, **kwargs):
         context = super(MovieDetailView, self).get_context_data(**kwargs)
         context['form'] = MovieAddReviewForm()
         return context
+
+    def get_queryset(self):
+        return super().get_queryset().prefetch_related('actors', 'directors', 'movieshots_set')
 
 
 class MovieAddReviewView(View):

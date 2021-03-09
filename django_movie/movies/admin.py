@@ -51,11 +51,11 @@ class MovieShotsInline(admin.TabularInline, GetImageMixin):
 class MovieAdmin(admin.ModelAdmin, GetImageMixin):
     image_width = '100'
     prepopulated_fields = {'url': ('title',)}
-    list_display = ['id', 'title', 'category', 'url', 'draft']
+    list_display = ['id', 'title', 'category', 'url', 'draft', 'year']
     list_display_links = ['title']
     list_filter = ['category', 'year']
     search_fields = ['title', 'category__name']
-    list_editable = ['draft']
+    list_editable = ['draft', 'year']
     readonly_fields = ['get_image']
     form = MovieAdminForm
     fieldsets = [
@@ -80,7 +80,26 @@ class MovieAdmin(admin.ModelAdmin, GetImageMixin):
     ]
     save_on_top = True
     save_as = True
-    inlines = [MovieShotsInline, ReviewsInline]
+    # inlines = [MovieShotsInline, ReviewsInline]
+    actions = ['publish', 'unpublish']
+
+    def publish(self, request, queryset):
+        draft_updated = queryset.update(draft=False)
+
+        self.message_user(request, f'{draft_updated} '
+                                   f'{"запись была обновлена" if draft_updated == 1 else "записей было обновлено"}')
+
+    publish.short_description = 'Опубликовать'
+    publish.allowed_permissions = ('change',)
+
+    def unpublish(self, request, queryset):
+        draft_updated = queryset.update(draft=True)
+
+        self.message_user(request, f'{draft_updated} '
+                                   f'{"запись была обновлена" if draft_updated == 1 else "записей было обновлено"}')
+
+    unpublish.short_description = 'Снять с публикации'
+    unpublish.allowed_permissions = ('change',)
 
 
 @admin.register(Reviews)

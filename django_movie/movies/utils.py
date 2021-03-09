@@ -1,4 +1,5 @@
 from django.utils.safestring import mark_safe
+from .models import *
 
 
 class GetImageMixin:
@@ -16,3 +17,9 @@ class GetImageMixin:
             return 'Фото не установлено'
 
     get_image.short_description = 'Миниатюра'
+
+
+class MovieFilterMixin:
+
+    def get_categories(self):
+        return Category.objects.all()

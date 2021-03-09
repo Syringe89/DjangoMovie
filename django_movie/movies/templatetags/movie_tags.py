@@ -1,5 +1,6 @@
 from django import template
 from django.core.exceptions import FieldDoesNotExist
+from ..models import Category, Genre
 
 register = template.Library()
 
@@ -15,3 +16,13 @@ def get_verbose_name(self, field_name):
     except (AttributeError, FieldDoesNotExist):
         return field_name
     return value
+
+
+@register.simple_tag()
+def get_categories():
+    return Category.objects.all()
+
+
+@register.simple_tag()
+def get_genres():
+    return Genre.objects.all()
