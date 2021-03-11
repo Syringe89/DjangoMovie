@@ -28,7 +28,7 @@
                         <div class="cate">
                             <span class="blue"><a href="#">{{ movie.year }}</a></span>
                         </div>
-                        <h6><a href="{{ movie.get_absolute_url }}">{{ movie.title }}</a></h6>
+                        <h6><a href="{% url 'movie_detail' category=movie.category.url genre=movie.genres.first.url slug=movie.url %}">{{ movie.title }}</a></h6>
                         <p><i class="ion-android-star"></i><span>7.4</span> /10</p>
                     </div>
                 </div>

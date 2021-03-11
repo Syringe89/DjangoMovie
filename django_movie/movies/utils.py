@@ -17,9 +17,3 @@ class GetImageMixin:
             return 'Фото не установлено'
 
     get_image.short_description = 'Миниатюра'
-
-
-class MovieFilterMixin:
-
-    def get_categories(self):
-        return Category.objects.all()

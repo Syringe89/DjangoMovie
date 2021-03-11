@@ -1,6 +1,6 @@
 from django import template
 from django.core.exceptions import FieldDoesNotExist
-from ..models import Category, Genre
+from ..models import Category, Genre, Movie
 
 register = template.Library()
 
@@ -26,3 +26,8 @@ def get_categories():
 @register.simple_tag()
 def get_genres():
     return Genre.objects.all()
+
+
+@register.simple_tag()
+def get_years():
+    return Movie.objects.all().order_by('year').values_list('year', flat=True).distinct()

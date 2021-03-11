@@ -95,7 +95,8 @@ class Movie(models.Model):
     draft = models.BooleanField("Черновик", default=False)
 
     def get_absolute_url(self):
-        return reverse('movie_detail', kwargs={'slug': self.url})
+        return reverse('movie_detail',
+                       kwargs={'category': self.category.url, 'genre': self.genres.first().url, 'slug': self.url})
 
     def get_reviews_without_parent(self):
         return self.reviews_set.filter(parent__isnull=True)
