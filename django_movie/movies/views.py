@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, TemplateView
 
-from movies.forms import MovieAddReviewForm
+from .forms import *
 from movies.models import Movie, Rating, Category, Genre
+from movies.movie_services import *
 
 
 class MovieView(ListView):
@@ -22,7 +23,8 @@ class MovieDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(MovieDetailView, self).get_context_data(**kwargs)
-        context['form'] = MovieAddReviewForm()
+        context['add_review_form'] = MovieAddReviewForm()
+        context['add_rating_form'] = MovieAddRatingForm()
         return context
 
     def get_queryset(self):
@@ -49,49 +51,14 @@ class MovieListView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(MovieListView, self).get_context_data(object_list=None, **kwargs)
-        if self.kwargs.get('category'):
-            context['title'] = Category.objects.get(url=self.kwargs['category']).name
-        else:
-            context['title'] = 'Произведения'
-        if self.kwargs.get('genre'):
-            context['title'] += f' жанра {Genre.objects.get(url=self.kwargs["genre"]).name}'
-        else:
-            context['title'] += ' всех жанров'
+        context['title'] = get_title_from_params(**self.kwargs)
         return context
 
     def get_queryset(self):
-        queryset = Movie.objects.all()
-
-        if self.kwargs.get('category'):
-            queryset = queryset.filter(category__url=self.kwargs['category'])
-        if self.kwargs.get('genre'):
-            queryset = Movie.objects.filter(genres__url=self.kwargs['genre'])
-        return queryset
+        return get_movie_from_params(**self.kwargs)
 
 
-class MovieListFilterView(ListView):
-    template_name = 'movies/movie_list_grid.html'
-    context_object_name = 'movie_list'
+def filtered_movies_redirect(request):
+    return redirect('movie_list', request.GET.get('category'), request.GET.get('genre'),
+                    request.GET.get('from'), request.GET.get('to'))
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(MovieListFilterView, self).get_context_data(object_list=None, **kwargs)
-        if self.request.GET.get('category') != 'all':
-            context['title'] = Category.objects.get(url=self.request.GET.get('category')).name
-        else:
-            context['title'] = 'Произведения'
-        if self.request.GET.get('genre') != 'all':
-            context['title'] += f' жанра {Genre.objects.get(url=self.request.GET.get("genre")).name}'
-        else:
-            context['title'] += ' всех жанров'
-        context['title'] += f' за {self.request.GET.get("from")} - {self.request.GET.get("to")}'
-        return context
-
-    def get_queryset(self):
-        queryset = Movie.objects.all()
-        if self.request.GET.get('category') != 'all':
-            queryset = queryset.filter(category__url=self.request.GET.get('category'))
-        if self.request.GET.get('genre') != 'all':
-            queryset = queryset.filter(genres__url=self.request.GET.get('genre'))
-        queryset = queryset.filter(year__range=(self.request.GET.get('from'), self.request.GET.get('to')))
-
-        return queryset

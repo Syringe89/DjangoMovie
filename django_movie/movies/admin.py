@@ -124,7 +124,11 @@ class MovieShotsAdmin(admin.ModelAdmin, GetImageMixin):
     readonly_fields = ['get_image']
 
 
+@admin.register(RatingStar)
+class RatingStarAdmin(admin.ModelAdmin):
+    list_display = ['value']
+
+
 admin.site.register(Rating)
-admin.site.register(RatingStar)
 admin.site.site_title = 'Администрирование'
 admin.site.site_header = 'Администрирование'

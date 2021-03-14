@@ -7,7 +7,6 @@
 {% block title %}{{ movie.title }}{% endblock %}
 
 {% block content %}
-<body>
 <div class="hero mv-single-hero">
     <div class="container">
         <div class="row">
@@ -68,16 +67,17 @@
                             </p>
                         </div>
                         <div class="rate-star">
-                            <p>Rate This Movie: </p>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star"></i>
-                            <i class="ion-ios-star-outline"></i>
+                            <form action="#" method="post" name="rating">
+                                {% csrf_token %}
+                                <input type="hidden" name="movie" value="{{ movie.id }}">
+                                <fieldset>
+                                    <span class="star-cb-group">
+                                        {% for id, star in add_rating_form.fields.star.choices %}
+                                        <input type="radio" id="rating{{ id }}" name="star" value="{{ star }}" /><label for="rating{{ id }}">{{ star }}</label>
+                                        {% endfor %}
+                                    </span>
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
                     <div class="movie-tabs">
@@ -283,7 +283,7 @@
                                                               method="post" id="review_form">
                                                             {% csrf_token %}
                                                             <input type="hidden" name="parent" id="comment_parent" value="">
-                                                            {% for field in form %}
+                                                            {% for field in add_review_form %}
 
                                                             <div class="col-md-8">
                                                                 {{ field.errors }}
@@ -378,7 +378,6 @@
         </div>
     </div>
 </div>
-</body>
 <script>
     function add_review(name, id){
         document.getElementById("comment_parent").value = id;
